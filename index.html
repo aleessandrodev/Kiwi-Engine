@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Kiwi Engine</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/ayu-mirage.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.css">
+  </head>
+
+  <body>
+
+    <style>
+      .CodeMirror {
+        height: 70vh;
+        width: 92vw;
+        border: transparent;
+        font-size: 14px;
+        margin-top: 60px;
+        margin-left: 120px;
+        background-color: #404040;
+      }
+
+      
+    </style>
+
+    <div class="bar">
+      <div id="resizerBar"></div>
+    </div>
+
+    <div id="dropzone">
+      <div id="resizerDrop"></div>
+      <ul id="fileList"></ul>
+      <div id="chooser">
+        <p>Project Name:</p>
+        <input placeholder="Project name" pattern="\S+" title="Non puoi inserire spazi" id="namePrj">
+      </div>
+      
+      <select id="optExamples">
+        <option>Empty</option>
+        <option>Platform</option>
+        <option>4-Movement</option>
+        <option>Car</option>
+      </select>
+
+      <div id="chooser">
+        <p>Description:</p>
+        <textarea placeholder="Game description"></textarea>
+      </div>
+      <div id="downElements">
+        <button>Create Project</button>
+      </div>
+
+    </div>
+
+    <div id="prj">
+      <button>+<span>New Project</span></button>
+    </div>
+
+    <div id="impPrj">
+
+    </div>
+
+    <div id="customMenu">
+        <ul style="list-style:none; margin:0; padding:0;">
+            <li>New Project</li>
+            <li>Load Project</li>
+            <hr style="margin:5px 0; border-color: #555;">
+            <li>Shooter</li>
+            <li>Platformer</li>
+            <li>Car</li>
+        </ul>
+    </div>
+
+    <div class="Bbar">
+      <a href="#menu" onclick="menu()" class="barMenu" id="menuButton">Menu</a>
+      <a href="#play" id="playButton">
+        <img src="../image/play.png">
+      </a>
+      <a href="#stop">
+        <img src="../image/stop.png">
+      </a>
+      <a href="#debug">
+        <img src="../image/debug.png">
+      </a>
+      <a href="#save" id="saveButton">
+        <img src="../image/save.png">
+      </a>
+    </div>
+
+
+
+
+    <div class="engine">
+
+
+      <textarea id="debug" readonly>
+&lt;&lt;debug&gt;&gt; Debug configured successfully v0.0.1.
+&lt;&lt;debug&gt;&gt; Kiwi Game. All rights reserved. ©
+      </textarea>
+    </div>
+
+
+
+    <script src="script.js"></script>
+    <script src="_editor/gameEngine.js"></script>
+    <script src="_editor/functionalButtons.js"></script>   
+  </body>
+</html>

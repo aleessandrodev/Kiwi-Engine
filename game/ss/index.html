@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <img src="images/logoinv.png" alt="LOGO">
+    <p>Powered by Kiwi Engine</p>
+
+    <script>
+      let prjName = "";
+      fetch('../../v.json')
+        .then(response => response.json())
+        .then(data => {
+          prjName = data.prjName;
+        });
+      setTimeout(() => {
+          window.location.href = `../${prjName}/index.html`;
+      }, 2500);
+    </script>
+
+  </body>
+</html>
