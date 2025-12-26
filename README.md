@@ -1,6 +1,4 @@
-==============================
-Kiwi Engine
-==============================
+# Kiwi Engine
 
 Description:
 Kiwi Engine is an experimental game engine designed for the creation of web-based video games.
@@ -8,10 +6,7 @@ Kiwi Engine is an experimental game engine designed for the creation of web-base
 Project status:
 In development. Some features may change, be incomplete, or not work properly.
 
---------------------------------
-LICENSE AND TERMS OF USE
---------------------------------
-
+LICENSE AND TERMS OF USE:
 - The source code MAY be modified for personal or educational use.
 - Redistribution of the game engine in its original form is FORBIDDEN.
 - Claiming this game engine, or parts of it, as your own is FORBIDDEN.
