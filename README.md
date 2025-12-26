@@ -16,6 +16,7 @@ LICENSE AND TERMS OF USE:
   for educational or demonstrative purposes, without including the entire engine.
 
 How to use:
+
 To use the editor, install NodeJS:
 
 Windows:
