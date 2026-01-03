@@ -54,4 +54,4 @@ Code written by:
 Alessandro Bernardelli
 
 For more information visit:
-www.kiwigame.com
+www.kiwigame.net
