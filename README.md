@@ -45,6 +45,11 @@ Alternatively, you can run:
 <code>node server.js</code>
 The same commands apply for Linux.
 
+You need to install multer and express with:
+<code>npm install multer</code>
+<code>npm install express</code>
+Make sure you are in the correct folder containing server.js.
+
 
 Credits:
 Including credits for the game engine in the developed game is not mandatory,
