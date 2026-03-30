@@ -1,0 +1,546 @@
+body {
+  margin: 0;
+  height: 100vh;
+  justify-content: flex-start; 
+  position: relative;
+  background: #1f2430;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+#logoText{
+  color: #e0e6f0;
+  font-family: monospace;
+  margin-left: 4px;
+  margin-right: 16px;
+
+}
+
+.bar{
+  margin-top: 35px;
+  overflow-y: auto;
+  position: absolute;
+  background-color: #191d26;
+  width: 120px;
+  height: 80vh;
+  z-index: 1;
+}
+
+#dropzone{
+  margin-top: 35px;
+  right: 0px;
+  overflow-y: auto;
+  position: absolute;
+  background-color: #191d26;
+  width: 220px;
+  height: 80vh;
+  z-index: 1;
+}
+
+#resizerDrop{
+  width: 5px;
+  height: 100%;
+  background: #11141a;
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: ew-resize;
+}
+
+#resizerBar{
+  width: 5px;
+  height: 100%;
+  background: #11141a;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: ew-resize;  
+}
+
+#ConteinerHTML, #ConteinerCSS, #ConteinerJS{
+  position: relative;
+  display: block;
+  margin-top: 60px;
+  color: #d3d3d3;
+  background-color: #11131a;
+  font-family: monospace;
+}
+
+#saved, #savedError{
+  z-index: 100;
+  width: 250px;
+  height: 50px;
+  position: absolute;
+  margin-top: 60px;
+  color: #d3d3d3;
+  background-color: #11131a;
+  font-family: monospace;
+  right: -250px;
+  margin-top: 91vh;
+  opacity: 0;
+  transition: right 0.5s ease, opacity 0.5s ease;
+}
+
+#saved.attivo, #savedError.attivo{
+  right: 20px; 
+  opacity: 1;
+}
+
+#saved p, #savedError p{
+  position: absolute;
+  margin-left: 55px;
+}
+
+#saved img, #savedError img{
+  width: 35px;
+  margin-left: 5px;
+  margin-top: 5px;
+  height: auto;
+
+}
+
+#ConteinerHTML p, #ConteinerCSS p, #ConteinerJS p{
+  text-align: center;
+}
+
+.boxContainer{
+  font-family: monospace;
+  text-decoration-style: none;
+  color: #d3d3d3;
+  background-color: #2a3140;
+  margin-bottom: 4px;
+  height: 30px;
+  align-content: center;
+}
+
+.boxContainer a{
+  text-decoration: none;
+  font-weight: normal;
+  font-family: monospace;
+  margin-left: 2px;
+
+}
+
+.boxContainer:hover a{
+  text-decoration: underline;
+
+}
+
+.boxContainer img{
+  position: relative;
+  margin-left: 4px;
+  width: 14px;
+  height: auto;
+  
+}
+
+.Bbar{
+  background-color: #191d26;
+  width: 100vw;
+  height: 35px;
+}
+
+/*.bar a{
+  color:  lightgray;
+  font-family: monospace;
+  display: inline-block;
+  padding: 0.8vh 1.8vh;
+  background-color:#2b3243;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  vertical-align: middle; 
+  margin-top: 10px;
+}
+
+#htmlButton{
+  margin-top: 60px;
+}
+
+.bar a:hover{
+  background-color: #3a4260;
+  box-shadow: 2px 2px 10px #000000;
+}*/
+
+.Bbar a{
+  color:  lightgray;
+  font-family: monospace;
+  display: inline-block;
+  padding: 0.6vh 0.6vh;
+  background-color: transparent;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  vertical-align: middle; 
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+.Bbar img{
+  width: 15px;
+  height: auto;
+  filter: brightness(0) saturate(100%) invert(100%) hue-rotate(190deg) brightness(80%) contrast(100%);
+}
+
+.Bbar a:hover{
+  background-color: #3a4260;
+  /*box-shadow: 2px 2px 10px #000000;*/
+}
+
+.barPlay{
+  right: 4px;
+}
+
+
+
+#debug{
+  position: fixed;
+  background-color: black;
+  color: #cce0ff;
+  resize: none;
+  font-family: monospace;
+  height: 24vh;
+  width: 100vw;
+  border: transparent;
+  z-index: 2;
+  bottom: 0px;
+}
+
+/*#addFileBtn {
+  color: lightgray;
+  font-family: monospace;
+  display: inline-block;
+  padding: 0.4vw 0.7vw;
+  background-color: #2b3243;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 30px;
+  cursor: pointer;
+  vertical-align: middle;
+  box-shadow: 2px 2px 10px #000000;
+  line-height: 1;
+}
+
+#addFileBtn:hover {
+  background-color: #3a4260;
+}
+*/
+
+
+#square {
+  width: 40px;
+  height: 40px;
+  background-color: blue;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: none;
+}
+
+#circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: blue;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: none;
+}
+
+.engine{
+  position: relative;
+}
+
+#codeText{
+  position: absolute;
+  top: -20px;
+  left: 0px;
+}
+
+#customMenu{
+  font-family: monospace;
+  display: none;
+  position: absolute;
+  z-index:120;
+  background:#333;
+  width: 120px;
+  color:white;
+  padding:10px;
+  border-radius: 3px;
+  background-color: #11141a;
+  color: #d3d3d3;
+}
+
+#optionsMenu{
+  display: none;
+  font-family: monospace;
+  position: absolute;
+  z-index:120;
+  background:#333;
+  width: 175px;
+  color:white;
+  padding:10px;
+  border-radius: 3px;
+  background-color: #11141a;
+  color: #d3d3d3;
+  left: 50px;
+}
+
+#customMenu li{
+  padding: 5px;
+  cursor: pointer;
+}
+
+#customMenu li:hover{
+  background-color: #181d26;
+  border-radius: 3px;
+}
+
+#optionsMenu li{
+  padding: 5px;
+  cursor: pointer;
+}
+
+#optionsMenu li:hover{
+  background-color: #181d26;
+  border-radius: 3px;
+}
+
+#container {
+  width:100vw;
+  height:100vh;
+  overflow:hidden;
+  position:relative;
+}
+#viewer {
+  width:100%;
+  height:100%;
+  border:3px solid black;
+  background-color: white;
+  position:absolute;
+  left:0;
+  top:0;
+  transform-origin: 0 0;
+  pointer-events:none;
+}
+
+#overlay {
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  cursor:grab;
+}
+
+#chooser{
+  background-color: #11141a;
+  font-family: monospace;
+  position: relative;
+  top: 0px;
+  left: 15px;
+  color: lightgray;
+  margin-bottom: 25px;
+}
+
+#downElements{
+  font-family: monospace;
+  position: absolute;
+  bottom: 50px;
+  left: 15px;
+  color: gray;
+  margin-bottom: 25px;
+}
+
+#downElements button{
+  background-color: #2a3140;
+  border: 1px solid black;
+  border-radius: 3px;
+  font-family: monospace;
+  color: gray;
+}
+
+#downElements button:hover{
+  background-color: #202630;
+}
+
+#chooser a:hover{
+  text-decoration: underline;
+}
+
+#chooser input{
+  width: 60px;
+  background-color: #2a3140;
+  border: 1px solid black;
+  border-radius: 3px;
+  color: lightgray;
+  font-family: monospace;
+}
+
+#chooser textarea{
+  background-color: #2a3140;
+  border: 1px solid black;
+  border-radius: 3px;
+  color: lightgray;
+  font-family: monospace;
+}
+
+#chooser p{
+  display: inline;
+}
+
+#chooser img{
+  width: 15px;
+  height: auto;
+  filter: brightness(0) saturate(100%) invert(100%) hue-rotate(190deg) brightness(80%) contrast(100%);
+}
+
+#chooser button{
+  background-color: #2a3140;
+  border: 1px solid black;
+  border-radius: 3px;
+
+}
+
+#chooser button:hover{
+  background-color: #202630;
+}
+
+#optExamples{
+  background-color: #11141a;
+  font-family: monospace;
+  position: relative;
+  top: 0px;
+  left: 15px;
+  color: lightgray;
+  border: 1px solid black;
+  margin-bottom: 25px; 
+}
+
+#prj button{
+  border: 2px solid black;
+  position: absolute;
+  background-color: #1a1e29;
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+  color: white;
+  width: 320px;
+  height: 210px;
+  left: 200px;
+  top: 100px;
+  border-radius: 5px;
+}
+
+#prj button:hover{
+  background-color: #1c2230;
+}
+
+#prj span{
+  font-size: 30px;
+}
+
+#impPrj{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+#impPrj{
+  position: absolute;
+  left: 580px;
+  height: 600px;
+  margin-top: 100px;
+  overflow-y: auto;
+  scrollbar-color: #888 #e0e0e0;
+}
+
+.openPrj button{
+  border: 2px solid black;
+  position: relative;
+  background-color: #1a1e29;
+  font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: white;
+  width: 320px;
+  height: 70px;
+  border-radius: 5px;
+}
+
+.openPrj button:hover{
+  background-color: #1c2230;
+}
+
+
+
+.bar {
+  scrollbar-width: thin;           
+  scrollbar-color: #2a3140 #1f2430;      
+}
+.bar::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+.bar::-webkit-scrollbar-track {
+  background: #1f2430;
+  border-radius: 10px;
+}
+.bar::-webkit-scrollbar-thumb {
+  background-clip: content-box;
+  border-radius: 10px;
+  background: #2a3140;
+  border: 3px solid transparent;
+}
+.bar::-webkit-scrollbar-thumb:hover {
+  background: #357ab7;
+}
+
+
+#dropzone {
+  scrollbar-width: thin;
+  scrollbar-color: #2a3140 #1f2430;
+}
+#dropzone::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+#dropzone::-webkit-scrollbar-track { background: #1f2430; border-radius: 10px; }
+#dropzone::-webkit-scrollbar-thumb {
+  background: #2a3140; border-radius: 10px; border: 3px solid transparent;
+}
+#dropzone::-webkit-scrollbar-thumb:hover { background: #357ab7; }
+
+
+#impPrj {
+  scrollbar-width: thin;
+  scrollbar-color: #2a3140 #1f2430;
+}
+#impPrj::-webkit-scrollbar { width: 12px; height: 12px; }
+#impPrj::-webkit-scrollbar-track { background: #1f2430; border-radius: 10px; }
+#impPrj::-webkit-scrollbar-thumb { background: #2a3140; border-radius: 10px; border: 3px solid transparent; }
+#impPrj::-webkit-scrollbar-thumb:hover { background: #357ab7; }
+
+
+.CodeMirror-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #2a3140 #1f2430;
+}
+.CodeMirror-scroll::-webkit-scrollbar { width: 12px; height: 12px; }
+.CodeMirror-scroll::-webkit-scrollbar-track { background: #1f2430; border-radius: 10px; }
+.CodeMirror-scroll::-webkit-scrollbar-thumb { background: #2a3140; border-radius: 10px; border: 3px solid transparent; }
+.CodeMirror-scroll::-webkit-scrollbar-thumb:hover { background: #357ab7; }
+
+
+

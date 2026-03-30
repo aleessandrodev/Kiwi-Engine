@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Kiwi Engine</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/ayu-mirage.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.css">
+  </head>
+
+  <body>
+
+    <style>
+      .CodeMirror {
+        height: 70vh;
+        width: 92vw;
+        border: transparent;
+        font-size: 14px;
+        margin-top: 60px;
+        margin-left: 120px;
+        background-color: #404040;
+      }
+    </style>
+
+    <div class="bar">
+      <div id="resizerBar"></div>
+      <div id="ConteinerHTML">
+        <p>Layout:</p>
+        <div class="boxContainer"><img src="../image/htmlIco.png"><a>index</a></div>
+      </div>
+      <div id="ConteinerCSS">
+        <p>Style:</p>
+        <div class="boxContainer"><img src="../image/htmlIco.png"><a>style</a></div>
+      </div>
+      <div id="ConteinerJS">
+        <p>Logic:</p>
+        <div class="boxContainer"><img src="../image/htmlIco.png"><a>script</a></div>
+      </div>
+    </div>
+
+    <div id="dropzone">
+      <div id="resizerDrop"></div>
+      <ul id="fileList"></ul>
+      <div id="chooser">
+        <p>Visualization:</p>
+        <button id="Vt"><img  src="../image/layout.png"></button>
+        <button id="Vf"><img  src="../image/htmlIco.png"></button>
+      </div>
+
+      <div id="chooser">
+        <p>Layout Size:</p>
+        <input type="number" placeholder="width" id="widthS" value="720">
+        <input type="number" placeholder="height" id="heightS" value="360">
+      </div>
+
+      <div id="chooser">
+        <p>Block Size:</p>
+        <input type="checkbox" id="BlockSize">
+      </div>
+      <div id="tree"></div>
+    </div>
+
+    <input type="file" id="fileInput" hidden>
+
+    <div id="saved">
+        <p>Saved successfully!</p>
+        <img src="../image/ticksave.png">
+    </div>
+
+    <div id="savedError">
+        <p>Error saving!</p>
+        <img src="../image/xsave.png">
+    </div>
+
+
+    <div id="customMenu">
+        <ul style="list-style:none; margin:0; padding:0;">
+            <li>Layout</li>
+            <li>Style</li>
+            <li>Code</li>
+            <hr style="margin:5px 0; border-color: #555;">
+            <li>Sprite</li>
+            <li>Audio</li>
+            <li>Video</li>
+            <hr style="margin:5px 0; border-color: #555;">
+            <li>Font</li>
+        </ul>
+    </div>
+
+    <div id="optionsMenu">
+        <ul style="list-style:none; margin:0; padding:0;">
+            <li>New project</li>
+            <li>Open project</li>
+            <hr style="margin:5px 0; border-color: #555;">
+            <li>Play (Ctrl+F9)</li>
+            <li>Debug (Ctrl+F10)</li>
+            <li>Remote Play (Ctrl+F11)</li>
+            <li>Save (Ctrl+S)</li>
+            <hr style="margin:5px 0; border-color: #555;">
+            <li>Export</li>
+            <li>Backup</li>
+            <li>View project folder</li>
+            <hr style="margin:5px 0; border-color: #555;">
+            <li>View game engine folder</li>
+            <li>View module folder</li>
+        </ul>
+    </div>
+
+    <div class="Bbar">
+      <a href="#menu" onclick="menu()" class="barMenu" id="menuButton">Menu</a>
+      <a href="#play" id="playButton">
+        <img src="../image/play.png">
+      </a>
+      <a href="#stop">
+        <img src="../image/stop.png">
+      </a>
+      <a href="#debug">
+        <img src="../image/debug.png">
+      </a>
+      <a href="#save" id="saveButton">
+        <img src="../image/save.png">
+      </a>
+    </div>
+
+<div id="container">
+  <div id="overlay"></div>
+  <iframe id="viewer" src=""></iframe>
+</div>
+
+
+    <div class="engine">
+      <div id="codeText">
+        <textarea id="Codice">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <title></title>
+  </head>
+  <body>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+  </body>
+  <script type="module" src="script.js"></script>
+  <script src="../lenguage.js"></script>
+</html>
+        </textarea>
+      </div>
+
+      <textarea id="debug" readonly>
+&lt;&lt;debug&gt;&gt; Debug configured successfully v0.0.1.
+&lt;&lt;debug&gt;&gt; Kiwi Game. All rights reserved. ©
+      </textarea>
+    </div>
+
+    <!-- CodeMirror JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/show-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/javascript-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/html-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/hint/css-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closetag.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/addon/edit/closebrackets.min.js"></script>
+
+    <script src="gameEngine.js"></script>
+    <script src="../game/lenguage.js"></script>
+    <script src="functionalButtons.js"></script>
+    <script src="moveScreen.js"></script>
+    <script src="debug.js"></script>
+
+    <script>
+      editor = CodeMirror.fromTextArea(document.getElementById("Codice"), {
+        lineNumbers: true,
+        mode: "htmlmixed",
+        theme: "ayu-mirage",
+        indentUnit: 4,
+        tabSize: 4,
+        lineWrapping: true,
+        autoCloseBrackets: true,
+        matchBrackets: true,
+        autoCloseTags: true,
+        extraKeys: { "Ctrl-Space": "autocomplete" }
+      });
+
+      editor.on("inputRead", function (cm, change) {
+        if (change.text[0] && /[a-zA-Z0-9_]/.test(change.text[0])) {
+          cm.showHint({ completeSingle: false });
+        }
+      });
+    </script>
+  </body>
+</html>
