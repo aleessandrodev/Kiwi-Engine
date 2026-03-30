@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <title>Caricamento...</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <img src="images/logoinv.png" alt="LOGO">
+    <p>Powered by Kiwi Engine</p>
+
+    <script>
+      let prjName = "";
+      fetch('../../v.json')
+        .then(response => response.json())
+        .then(data => {
+          prjName = data.prjName;
+          
+          setTimeout(() => {
+            window.location.replace(`../${prjName}/index.html`);
+          }, 2500);
+        })
+        .catch(err => console.error("Errore nel caricamento v.json:", err));
+    </script>
+  </body>
+</html>
