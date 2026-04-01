@@ -1,0 +1,29 @@
+#gioco {
+  width: 100vw;
+  height: 100vh;
+}
+
+#square {
+  width: 40px;
+  height: 40px;
+  background-color: blue;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: none;
+}
+
+#circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: blue;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: none;
+}
+
+
+
+
